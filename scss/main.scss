@@ -1,6 +1,2 @@
 // This is where you can import other stylesheets or write your scss code
-
-body,
-body * {
-  box-sizing: border-box;
-}
+@import "../node_modules/bootstrap/scss/bootstrap";
