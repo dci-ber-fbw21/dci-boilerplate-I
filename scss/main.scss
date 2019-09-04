@@ -3,4 +3,9 @@
 body,
 body * {
   box-sizing: border-box;
+  border: 1px solid red;
+
+  h1 {
+    color: blue;
+  }
 }
