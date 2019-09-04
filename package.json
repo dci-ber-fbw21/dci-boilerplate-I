@@ -5,8 +5,11 @@
   "main": "index.js",
   "author": "",
   "scripts": {
-    "start": "live-server",
-    "build": "npm run clean && sass scss:styles",
+    "start": "run-p watch watch:styles",
+    "build": "run-s clean build:styles",
+    "build:styles": "sass scss:styles",
+    "watch": "live-server",
+    "watch:styles": "npm run build:styles -- --watch",
     "clean": "rm -rf styles",
     "deploy": ""
   },
