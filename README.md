@@ -81,7 +81,7 @@ npm start
 
 ### Production
 
-Transpile sass and copy files relevant files from **src** to **dist** to prepare your website for **deployment**.
+Transpile sass and copy relevant files from **src** to **dist** to prepare your website for **deployment**.
 
 ```
 npm run build
@@ -104,7 +104,6 @@ Project
 │   README.md
 │   package.json
 |   package-lock.json
-│   webpack.config.js
 └───src
 │   │   index.html
 │   └───styles
