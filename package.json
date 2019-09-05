@@ -2,16 +2,19 @@
   "name": "",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.html",
   "author": "",
   "scripts": {
     "start": "run-p watch watch:styles",
-    "build": "run-s clean build:styles",
-    "build:styles": "sass scss:styles",
-    "watch": "live-server",
-    "watch:styles": "npm run build:styles -- --watch",
-    "clean": "rm -rf styles",
-    "deploy": ""
+    "build": "run-s clean clean:styles build:styles copy",
+    "deploy": "run-s build publish",
+    "build:styles": "sass src/scss:src/styles",
+    "watch": "live-server src",
+    "watch:styles": "sass src/scss:src/styles --watch",
+    "clean": "rm -rf dist",
+    "clean:styles": "rm -rf src/styles",
+    "copy": "mkdir dist && rsync -avr --exclude=\"/scss\" src/ dist",
+    "publish": "gh-pages -d dist"
   },
   "keywords": [],
   "license": "ISC",
@@ -19,6 +22,7 @@
     "bootstrap": "^4.3.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "live-server": "^1.2.1",
     "npm-run-all": "^4.1.5",
     "sass": "^1.23.0-module.beta.1"
